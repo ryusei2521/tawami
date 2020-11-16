@@ -17,6 +17,7 @@ def whenSwitchedToMaruzai():
 #画面作成
 tki = tk.Tk()
 tki.geometry(str(UISettings.windowWide) + "x" + str(UISettings.windowHeight))
+tki.resizable(width=0,height=0)
 tki.title('たわみ計算機')
 
 # ラベル
@@ -87,6 +88,9 @@ calButton.place(x=UISettings.calButton['x'], y=UISettings.calButton['y'])
 dopingDrug = tk.Label(text="条件の選択", font=("Helvetica", 16, "bold"))
 dopingDrug.place(x=210, y=10)
 
+# 式の選択
+dopingDrug = tk.Label(text="式の選択", font=("Helvetica", 16, "bold"))
+dopingDrug.place(x=220, y=80)
 #ラジオボタン
 switching = tk.IntVar()
 switching.set(0)
@@ -102,6 +106,46 @@ maruzaiButton = tk.Radiobutton(
     tki, value=1, variable=switching, text="丸材", command=lambda: whenSwitchedToMaruzai())
 maruzaiButton.place(
     x=UISettings.maruzaiButton['x'], y=UISettings.maruzaiButton['y'])
+
+#ラジオボタン
+switchingsiki = tk.IntVar()
+switchingsiki.set(0)
+
+#等分布荷重
+toubunpu8Button = tk.Radiobutton(
+    tki, value=0, variable=switchingsiki, text="8EI")
+toubunpu8Button.place(
+    x=UISettings.toubunpu8Button['x'], y=UISettings.toubunpu8Button['y'])
+
+#等分布荷重
+toubunpu6Button = tk.Radiobutton(
+    tki, value=1, variable=switchingsiki, text="6EI")
+toubunpu6Button.place(
+    x=UISettings.toubunpu6Button['x'], y=UISettings.toubunpu6Button['y'])
+
+#集中荷重
+syutyu3Button = tk.Radiobutton(
+    tki, value=2, variable=switchingsiki, text="3EI")
+syutyu3Button.place(
+    x=UISettings.syutyu3Button['x'], y=UISettings.syutyu3Button['y'])
+
+#集中荷重
+syutyu2Button = tk.Radiobutton(
+    tki, value=3, variable=switchingsiki, text="2EI")
+syutyu2Button.place(
+    x=UISettings.syutyu2Button['x'], y=UISettings.syutyu2Button['y'])
+
+#モーメントの荷重
+moment2Button = tk.Radiobutton(
+    tki, value=4, variable=switchingsiki, text="2EI")
+moment2Button.place(
+    x=UISettings.moment2Button['x'], y=UISettings.moment2Button['y'])
+
+#モーメントの荷重
+moment1Button = tk.Radiobutton(
+    tki, value=5, variable=switchingsiki, text="1EI")
+moment1Button.place(
+    x=UISettings.moment1Button['x'], y=UISettings.moment1Button['y'])
 
 whenSwitchedToKakuzai()
 #画面をそのまま表示
