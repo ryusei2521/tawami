@@ -26,5 +26,6 @@ def tawamiCalculation(stressText,deflectionText,diameterText,sideText,heightText
     stressText.insert(0, result)
 
     result = round(float(((Power*length**3)/(3*yang*intertia))*1000),2)
+
     deflectionText.delete(0, 'end')
     deflectionText.insert(0, result)

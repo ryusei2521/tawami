@@ -3,11 +3,7 @@ from tkinter import ttk
 import UISettings
 import tawamiCalculation as twmCal
 
-
-
-
-
-# 関数失礼するゾ～
+# ラジオボタンを押した時のテキストボックスの切り替え
 def whenSwitchedToKakuzai():
     diameterText.config(state="disable")
     sideText.config(state="normal")
@@ -17,10 +13,6 @@ def whenSwitchedToMaruzai():
     diameterText.config(state="normal")
     sideText.config(state="disable")
     heightText.config(state="disable")
-
-
-
-
 
 #画面作成
 tki = tk.Tk()
@@ -38,7 +30,7 @@ yang = tk.Label(text='縦弾性係数:E')
 yang.place(x=UISettings.yang['x'], y=UISettings.yang['y'])
 diameter = tk.Label(text='丸材の直径:d')
 diameter.place(x=UISettings.diameter['x'], y=UISettings.diameter['y'])
-side = tk.Label(text='角材の横:s')
+side = tk.Label(text='角材の横:b')
 side.place(x=UISettings.side['x'], y=UISettings.side['y'])
 height = tk.Label(text='角材の高さ:h')
 height.place(x=UISettings.height['x'], y=UISettings.height['y'])
@@ -48,7 +40,6 @@ stress.place(
 deflection = tk.Label(text='たわみ:δ')
 deflection.place(
     x=UISettings.deflection['x'], y=UISettings.deflection['y'])
-
 
 # テキストボックス
 PowerText = tk.Entry(width=UISettings.PowerText['width'])
@@ -94,17 +85,18 @@ calButton.place(x=UISettings.calButton['x'], y=UISettings.calButton['y'])
 
 # 条件の選択
 dopingDrug = tk.Label(text="条件の選択", font=("Helvetica", 16, "bold"))
-dopingDrug.place(x=280, y=10)
+dopingDrug.place(x=210, y=10)
 
-
-#ﾚｲﾃﾞｨｵﾌﾞｯﾄﾝ
+#ラジオボタン
 switching = tk.IntVar()
 switching.set(0)
+
 #角材
 kakuzaiButton = tk.Radiobutton(
     tki, value=0, variable=switching, text="角材", command=lambda: whenSwitchedToKakuzai())
 kakuzaiButton.place(
     x=UISettings.kakuzaiButton['x'], y=UISettings.kakuzaiButton['y'])
+
 #丸材
 maruzaiButton = tk.Radiobutton(
     tki, value=1, variable=switching, text="丸材", command=lambda: whenSwitchedToMaruzai())
