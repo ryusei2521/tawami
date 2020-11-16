@@ -31,3 +31,13 @@ allresetButton = {'x': 70, 'y': 300, 'height': 1, 'width': 10}
 kakuzaiButton = {'x': 210, 'y': 40}
 maruzaiButton = {'x': 285, 'y': 40}
 
+toubunpu8Button = {'x': 210, 'y': 120}
+toubunpu6Button = {'x': 285, 'y': 120}
+
+syutyu3Button = {'x': 210, 'y': 140}
+syutyu2Button = {'x': 285, 'y': 140}
+
+moment2Button= {'x': 210, 'y': 160}
+moment1Button= {'x': 285, 'y': 160}
+
+
